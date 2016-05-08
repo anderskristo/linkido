@@ -1,0 +1,19 @@
+{
+  "name": "mymusic",
+  "version": "1.0.0",
+  "description": "mymusic",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anderskristo/mymusic.git"
+  },
+  "author": "anderskristo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anderskristo/mymusic/issues"
+  },
+  "homepage": "https://github.com/anderskristo/mymusic#readme"
+}
