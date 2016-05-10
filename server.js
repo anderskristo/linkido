@@ -1,6 +1,7 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
+var exphbs     = require('express-handlebars');
 var artists    = require('./app/routes/artist.js');
 var db         = require('./app/config/db.js');
 var port       = process.env.PORT || 8080;
@@ -17,12 +18,16 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'hbs');
+// Set handlebars as the templating engine
+app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
-app.get('*', function(req, res) {
-    res.sendfile('./public/views/index.html');
+app.get('/', function (req, res) {
+    res.render('home');
 });
+
+// Serve
+app.use('/', express.static(__dirname + '/public'));
 
 // Middleware to use for all requests
 artists.use(function(req, res, next) {
