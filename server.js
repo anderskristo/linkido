@@ -1,18 +1,28 @@
 var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
-var artists    = require('./app/routes/artist.js')
+var artists    = require('./app/routes/artist.js');
+var db         = require('./app/config/db.js');
+var port       = process.env.PORT || 8080;
 
 // Configure our app to use bodyParser()
 // This will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var port = process.env.PORT || 8080;
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, \ Authorization');
+    next();
+});
 
-// Add database
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mymusic');
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'hbs');
+
+app.get('*', function(req, res) {
+    res.sendfile('./public/views/index.html');
+});
 
 // Middleware to use for all requests
 artists.use(function(req, res, next) {
