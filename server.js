@@ -2,7 +2,7 @@ var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
 var exphbs     = require('express-handlebars');
-var artists    = require('./app/routes/artist.js');
+var links      = require('./app/routes/link.js');
 var db         = require('./app/config/db.js');
 var port       = process.env.PORT || 8080;
 
@@ -30,17 +30,17 @@ app.get('/', function (req, res) {
 app.use('/', express.static(__dirname + '/public'));
 
 // Middleware to use for all requests
-artists.use(function(req, res, next) {
+links.use(function(req, res, next) {
     console.log('Something is happening');
     next(); // Go to the next route
 });
 
-artists.get('/', function(req, res) {
+links.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to this super API' });
 });
 
 // Register our Routes
-app.use('/api', artists);
+app.use('/api', links);
 
 // Start the server
 app.listen(port);

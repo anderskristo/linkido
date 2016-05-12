@@ -1,21 +1,21 @@
 {
-  "name": "mymusic",
+  "name": "linkido",
   "version": "1.0.0",
-  "description": "mymusic",
+  "description": "linkido",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anderskristo/mymusic.git"
+    "url": "git+https://github.com/anderskristo/linkido.git"
   },
   "author": "anderskristo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/anderskristo/mymusic/issues"
+    "url": "https://github.com/anderskristo/linkido/issues"
   },
-  "homepage": "https://github.com/anderskristo/mymusic#readme",
+  "homepage": "https://github.com/anderskristo/linkido#readme",
   "devDependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",

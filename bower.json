@@ -1,11 +1,11 @@
 {
-  "name": "y",
+  "name": "linkido",
   "version": "1.0.0",
-  "homepage": "https://github.com/anderskristo/mymusic",
+  "homepage": "https://github.com/anderskristo/linkido",
   "authors": [
     "anderskristo <anderskristo@gmail.com>"
   ],
-  "description": "mymusic",
+  "description": "linkido",
   "main": "",
   "moduleType": [
     "node"

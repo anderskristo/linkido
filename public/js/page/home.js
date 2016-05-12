@@ -1,3 +1,3 @@
-define(['components/addArtist'], function() {
-    
+define(['components/post'], function() {
+
 });

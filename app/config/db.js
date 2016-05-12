@@ -1,3 +1,3 @@
 // Add database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mymusic');
+mongoose.connect('mongodb://localhost/linkido');
