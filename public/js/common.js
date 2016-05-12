@@ -1,4 +1,4 @@
 // Configure requirejs
 requirejs.config({
-    baseUrl: 'js'    
+    baseUrl: 'js'
 });

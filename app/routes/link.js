@@ -19,11 +19,12 @@ router.route('/link')
     // Create link
     .post(function(req, res) {
         var link = new Link(); // New instance of the Link Model
-        link.name = req.body.name // Set the link name
+        link.name = req.body.name; // Set the link name
+        link.url = req.body.url; // Set the link url
 
         link.save(function(err) {
             if (err) {
-                res.send(err)
+                res.send(err);
             }
             res.send({ message: 'Link added!' });
         });
@@ -48,6 +49,7 @@ router.route('/link/:link_id')
                 res.send(err);
             }
             link.name = req.body.name; // Update link name here
+            link.url = req.body.name; // Update link url here
 
             // Save the new link name
             link.save(function(err) {
