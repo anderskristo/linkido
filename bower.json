@@ -1,0 +1,26 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "homepage": "https://github.com/anderskristo/mymusic",
+  "authors": [
+    "anderskristo <anderskristo@gmail.com>"
+  ],
+  "description": "mymusic",
+  "main": "",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.2.0"
+  }
+}
