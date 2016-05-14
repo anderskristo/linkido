@@ -1,20 +1,28 @@
 define(function(require) {
-    var post = require('components/post');
-
+    // Post new link
+    var post     = require('components/post');
     var postBtn  = document.getElementsByClassName('fn-post-link')[0];
     var postName = document.getElementById('name');
     var postUrl  = document.getElementById('url');
 
     postBtn.addEventListener('click', function() {
         if (postName.value && postUrl.value) {
-            var formData = {
-                name: postName.value,
-                url: postUrl.value
-            };
-            post.postData(formData);
+            var url  = 'api/link';
+            var data = 'name=' + postName.value + '&url=' + postUrl.value;
+            post.postData(url, data).then(function(data) {
+                console.log(data);
+            });
         } else {
             console.log('Fields cannot be empty');
         }
     });
+
+    // Get new link
+    var get = require('components/get');
+    get.getData('api/links').then(function(data) {
+        var links = data;
+        console.log(links);
+    });
+
 
 });

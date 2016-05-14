@@ -1,21 +1,19 @@
 define(function() {
     return {
-        postData: function(url, data) {
+        getData: function(url) {
             var http   = new XMLHttpRequest();
             var url    = url;
-            var params = data;
 
-            http.open('POST', url, true);
-            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            http.open('GET', url, true);
             var ret = Promise.defer();
             http.onreadystatechange = function() {
-                if (http.readyState === 4 && http.status === 200) {
+                if (http.readyState === XMLHttpRequest.DONE) {
                     var response = JSON.parse(http.responseText);
-                    ret.resolve(response)
+                    ret.resolve(response);
                 }
                 // TODO: Catch some errors and reject them
             }
-            http.send(params);
+            http.send();
             return ret.promise;
         }
     };
