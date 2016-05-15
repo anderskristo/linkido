@@ -1,4 +1,7 @@
 // Configure requirejs
-requirejs.config({
-    baseUrl: 'js'
+require.config({
+    paths: {
+        'home': '/js/page/home',
+        'ajax': '/js/components/ajax'
+    }
 });

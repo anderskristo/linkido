@@ -1,4 +1,4 @@
-define(function() {
+define([], function() {    
     return {
         postData: function(url, data) {
             var http   = new XMLHttpRequest();

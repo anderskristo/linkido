@@ -5,3 +5,20 @@
     <input type="text" name="url" id="url" class="input" placeholder="URL">
     <input type="button" class="button fn-post-link" value="Add">
 </form>
+
+<ul class="links fn-links">
+    {{#each links}}
+        <li class="links__link">
+            <a href="{{this.url}}" target="_blank">{{this.name}}</a>
+        </li>
+    {{/each}}
+</ul>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        require(['home'], function(home) {
+            var h = new home();
+            h.init();
+        });
+    });
+</script>

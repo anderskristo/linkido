@@ -24,9 +24,16 @@ router.route('/link')
 
         link.save(function(err) {
             if (err) {
-                res.send(err);
+                res.send({
+                    response: false,
+                    message: err
+                });
             }
-            res.send({ message: 'Link added!' });
+            res.send({
+                response: true,
+                data: link,
+                message: 'Link added!'
+            });
         });
     });
 
@@ -72,5 +79,14 @@ router.route('/link/:link_id')
         });
     });
 
+// Middleware to use for all requests
+router.use(function(req, res, next) {
+    console.log('Something is happening');
+    next(); // Go to the next route
+});
+
+router.get('/', function(req, res) {
+    res.json({ message: 'hooray! welcome to this super API' });
+});
 
 module.exports = router;
